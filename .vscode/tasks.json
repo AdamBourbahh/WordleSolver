@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-wordle-solver",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++20",
+        "-static-libgcc",
+        "-static-libstdc++",
+        "-I",
+        "Header",
+        "Source/main.cpp",
+        "Source/Conjunto.cpp",
+        "Source/Entropia.cpp",
+        "Source/Logica.cpp",
+        "-o",
+        "wordle-solver.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "env": {
+          "PATH": "C:/msys64/ucrt64/bin;${env:PATH}"
+        }
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}
