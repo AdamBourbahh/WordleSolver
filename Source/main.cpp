@@ -19,7 +19,7 @@ int main() {
 
     // Wordle permite como maximo seis intentos.
     while (intentos_realizados < 6) {
-        string palabra = Entropia::CalcularMejorGuess(intentos, candidatos);
+        string palabra = "tarse";
 
         if (palabra.empty()) {
             cout << "No quedan candidatos. Compruebe el patron introducido." << endl;
@@ -39,10 +39,8 @@ int main() {
             break;
         }
 
-        Entropia::FiltrarSoluciones(
-            candidatos,
-            Logica::codificar_intento(resultado),
-            palabra
-        );
+        Entropia::FiltrarSoluciones(candidatos,Logica::codificar_intento(resultado),palabra);
+
+        Entropia::CalcularMejorGuess(intentos, candidatos);
     }
 }
