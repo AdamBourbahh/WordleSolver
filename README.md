@@ -1,0 +1,1 @@
+WordleSolver es un proyecto que, como su nombre dice, actúa como asistente a la hora de resolver el juego `Wordle`. Se basa en los fundamentos de la Teoría de la Información,  más en concreto en la Entropía de Shannon.

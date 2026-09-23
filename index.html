@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e8">
+  <title>WordleSolver | Tu siguiente palabra</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="WordleSolver inicio">
+        <span class="brand-mark">W</span>
+        <span>Wordle<span class="brand-accent">Solver</span></span>
+      </a>
+      <div class="top-status"><span class="status-dot"></span><span id="dictionary-status">Cargando diccionarios...</span></div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div><p class="eyebrow">WordleSolver</p><h1>Tu siguiente palabra.</h1></div>
+        <div class="intro-note" aria-label="Progreso">
+          <span class="note-label">INTENTOS</span>
+          <strong id="attempt-number">1 <small>/ 6</small></strong>
+          <span class="note-line"></span>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="board-panel panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-kicker">Tu partida</span>
+              <h2>Resultado</h2>
+            </div>
+            <button class="text-button" id="reset-button" type="button">Reiniciar <span aria-hidden="true">↗</span></button>
+          </div>
+
+          <div class="guess-card">
+            <div class="guess-meta"><span>Siguiente intento</span><span id="guess-source">Recomendación inicial</span></div>
+            <div class="guess-word" id="suggested-word" aria-live="polite">TARSE</div>
+          </div>
+
+          <div class="feedback-area">
+            <div class="feedback-label"><span>Marca las letras</span></div>
+            <div class="tiles" id="feedback-tiles" role="group" aria-label="Resultado de las cinco letras"></div>
+            <div class="legend">
+              <button class="legend-item legend-absent" data-state="0" type="button"><i></i><span><b>Gris</b><small>No está</small></span></button>
+              <button class="legend-item legend-present" data-state="1" type="button"><i></i><span><b>Amarillo</b><small>Otra posición</small></span></button>
+              <button class="legend-item legend-correct" data-state="2" type="button"><i></i><span><b>Verde</b><small>Posición correcta</small></span></button>
+            </div>
+            <button class="primary-button" id="submit-button" type="button" disabled>Aplicar resultado <span aria-hidden="true">→</span></button>
+            <button class="solved-button" id="solved-button" type="button">Wordle resuelto</button>
+          </div>
+        </div>
+
+        <aside class="results-panel panel">
+          <div class="panel-heading results-heading">
+            <div><span class="section-kicker">Análisis</span><h2>Lo que sabemos</h2></div>
+            <span class="live-pill"><span></span> EN VIVO</span>
+          </div>
+          <div class="stat-row">
+            <div class="stat-block"><strong id="candidate-count">—</strong><span>soluciones posibles</span></div>
+            <div class="stat-block stat-right"><strong id="entropy-value">—</strong><span>entropía estimada</span></div>
+          </div>
+          <div class="divider"></div>
+          <div class="candidate-heading"><span>Primeras posibilidades</span><span id="candidate-range">—</span></div>
+          <div class="candidate-list" id="candidate-list"><div class="loading-state"><span class="spinner"></span> Cargando palabras...</div></div>
+        </aside>
+      </section>
+
+    </main>
+    <footer><span>WORDLESOLVER</span><span id="engine-status">Motor local</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

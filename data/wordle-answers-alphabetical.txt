@@ -1362,6 +1362,7 @@ oxide
 ozone
 paddy
 pagan
+pager
 paint
 paler
 palsy
@@ -1570,6 +1571,7 @@ relax
 relay
 relic
 remit
+remix
 renal
 renew
 repay
