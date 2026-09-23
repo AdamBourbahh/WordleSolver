@@ -2,8 +2,7 @@
 
 Este proyecto nace como una implementación de resolución de Wordle basada en lógica, filtrado de candidatos y optimización por entropía. La idea central es la estrategia: elegir la palabra que maximiza la información que nos ayuda a reducir rápidamente el conjunto de soluciones posibles.
 
->La parte de lógica y algoritmo ha sido desarrollada por mí. La web, en cambio, es una implementación vibecoded: útil, y bastante funcional, pero no la base técnica ni la parte más importante del proyecto desde el punto de vista del razonamiento lógico
-<>.
+>La parte de lógica y algoritmo ha sido desarrollada por mí. La web, en cambio, es una implementación vibecoded: útil, y bastante funcional, pero no la base técnica ni la parte más importante del proyecto desde el punto de vista del razonamiento lógico.
 
 ## 1. Lógica del proyecto
 
