@@ -15,16 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
       - uses: mymindstorm/setup-emsdk@v14
         with:
           version: 4.0.15
       - run: mkdir -p wasm && em++ -std=c++20 -O3 -flto -I Header wasm/solver_bindings.cpp Source/Entropia.cpp Source/Logica.cpp -lembind -s MODULARIZE=1 -s EXPORT_ES6=1 -s ENVIRONMENT=web,worker -s ALLOW_MEMORY_GROWTH=1 -o wasm/solver.js
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: .
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
